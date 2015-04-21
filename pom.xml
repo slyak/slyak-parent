@@ -742,16 +742,6 @@
                             <wtpversion>2.0</wtpversion>
                         </configuration>
                     </plugin>
-                    <!--deploy生成源码-->
-                    <plugin>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <phase>deploy</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <!-- build-helper插件,追加源码目录 -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
