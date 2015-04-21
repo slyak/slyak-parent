@@ -564,11 +564,11 @@
                         <version>2.2.1</version>
                         <executions>
                             <execution>
-                                <id>attach-source</id>
-                                <phase>package</phase><!-- 要绑定到的生命周期的阶段 -->
+                                <id>attach-sources</id>
                                 <goals>
-                                    <goal>jar</goal><!-- 要绑定的插件的目标 -->
+                                    <goal>jar-no-fork</goal>
                                 </goals>
+                                <phase>deploy</phase>
                             </execution>
                         </executions>
                     </plugin>
@@ -842,6 +842,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
+                    <artifactId>maven-source-plugin</artifactId>
                 </plugin>
             </plugins>
         </build>
