@@ -564,11 +564,11 @@
                         <version>2.2.1</version>
                         <executions>
                             <execution>
-                                <id>attach-sources</id>
+                                <id>attach-source</id>
+                                <phase>package</phase><!-- 要绑定到的生命周期的阶段 -->
                                 <goals>
-                                    <goal>jar-no-fork</goal>
+                                    <goal>jar-no-fork</goal><!-- 要绑定的插件的目标 -->
                                 </goals>
-                                <phase>deploy</phase>
                             </execution>
                         </executions>
                     </plugin>
