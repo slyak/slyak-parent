@@ -570,10 +570,7 @@
                     <executions>
                         <execution>
                             <id>attach-sources</id>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                            <phase>site</phase>
+                            <phase>deploy</phase>
                         </execution>
                     </executions>
                 </plugin>
@@ -847,6 +844,9 @@
         <plugins>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
