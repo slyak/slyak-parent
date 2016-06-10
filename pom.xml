@@ -6,7 +6,7 @@
 
     <groupId>com.slyak</groupId>
     <artifactId>slyak-parent</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -363,4 +363,11 @@
         </repository>
     </distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>oss-snapshots</id>
+            <name>oss SNAPSHOTS</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 </project>
