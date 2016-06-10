@@ -22,6 +22,28 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.complier.version>1.6</java.complier.version>
+        <fastjson.version>1.2.12</fastjson.version>
+        <guava.version>19.0</guava.version>
+        <jxls.version>1.0.6</jxls.version>
+        <jxl.version>2.6.12</jxl.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <commons-io.version>2.5</commons-io.version>
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <xstream.version>1.4.9</xstream.version>
+        <jsoup.version>1.9.2</jsoup.version>
+        <zxing.version>3.2.1</zxing.version>
+        <jpush-version>3.2.9</jpush-version>
+
+        <proguard-maven-plugin.version>2.0.10</proguard-maven-plugin.version>
+        <maven-jarsigner-plugin.version>1.4</maven-jarsigner-plugin.version>
+        <native2ascii-maven-plugin.version>1.0-beta-1</native2ascii-maven-plugin.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
     </properties>
 
     <organization>
@@ -70,19 +92,19 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.12</version>
+                <version>${fastjson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>19.0</version>
+                <version>${guava.version}</version>
             </dependency>
 
             <!-- jxls -->
             <dependency>
                 <groupId>net.sf.jxls</groupId>
                 <artifactId>jxls-core</artifactId>
-                <version>1.0.6</version>
+                <version>${jxls.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-logging</groupId>
@@ -105,7 +127,7 @@
             <dependency>
                 <groupId>net.sf.jxls</groupId>
                 <artifactId>jxls-reader</artifactId>
-                <version>1.0.6</version>
+                <version>${jxls.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-logging</groupId>
@@ -124,7 +146,7 @@
             <dependency>
                 <groupId>net.sourceforge.jexcelapi</groupId>
                 <artifactId>jxl</artifactId>
-                <version>2.6.12</version>
+                <version>${jxl.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>log4j</groupId>
@@ -137,74 +159,56 @@
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.10</version>
+                <version>${commons-codec.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
-                <version>2.6</version>
+                <version>${commons-lang.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.4</version>
+                <version>${commons-lang3.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.5</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
-                <version>3.2.2</version>
+                <version>${commons-io.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-httpclient</groupId>
                 <artifactId>commons-httpclient</artifactId>
-                <version>3.1</version>
+                <version>${commons-httpclient.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
-                <version>1.3.1</version>
+                <version>${commons-fileupload.version}</version>
             </dependency>
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>1.9.2</version>
-            </dependency>
-
             <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
-                <version>1.4.9</version>
+                <version>${xstream.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jsoup</groupId>
                 <artifactId>jsoup</artifactId>
-                <version>1.9.2</version>
+                <version>${jsoup.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.google.zxing</groupId>
                 <artifactId>core</artifactId>
-                <version>3.2.1</version>
-            </dependency>
-
-            <!-- gson -->
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>2.6.2</version>
+                <version>${zxing.version}</version>
             </dependency>
 
             <!-- jpush -->
             <dependency>
                 <groupId>cn.jpush.api</groupId>
                 <artifactId>jpush-client</artifactId>
-                <version>3.2.9</version>
+                <version>${jpush-version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.slf4j</groupId>
@@ -230,7 +234,7 @@
                 <plugin>
                     <groupId>com.github.wvengen</groupId>
                     <artifactId>proguard-maven-plugin</artifactId>
-                    <version>2.0.10</version>
+                    <version>${proguard-maven-plugin.version}</version>
                     <configuration>
                         <maxMemory>512m</maxMemory>
                         <libs>
@@ -241,13 +245,13 @@
                 <!-- jarsigner -->
                 <plugin>
                     <artifactId>maven-jarsigner-plugin</artifactId>
-                    <version>1.4</version>
+                    <version>${maven-jarsigner-plugin.version}</version>
                 </plugin>
                 <!-- native2ascii插件,i18n转换 -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>native2ascii-maven-plugin</artifactId>
-                    <version>1.0-beta-1</version>
+                    <version>${native2ascii-maven-plugin.version}</version>
                     <configuration>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <includes>
@@ -270,6 +274,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <debuglevel>lines,vars,source</debuglevel>
                     <compilerArguments>
@@ -298,6 +303,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
@@ -319,7 +325,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <version>${maven-gpg-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>verify</phase>
@@ -332,7 +338,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.3</version>
+                <version>${nexus-staging-maven-plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>oss-releases</serverId>
