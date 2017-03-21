@@ -43,6 +43,9 @@
         <mysql-connector-java.version>5.1.39</mysql-connector-java.version>
         <kotlin.version>1.0.6</kotlin.version>
 
+        <!--default docker registry-->
+        <docker.registry>docker.slyak.com</docker.registry>
+
         <proguard-maven-plugin.version>2.0.10</proguard-maven-plugin.version>
         <maven-jarsigner-plugin.version>1.4</maven-jarsigner-plugin.version>
         <native2ascii-maven-plugin.version>1.0-beta-1</native2ascii-maven-plugin.version>
@@ -265,8 +268,80 @@
     </dependencyManagement>
 
     <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/application*.yml</include>
+                    <include>**/application*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/application*.yml</exclude>
+                    <exclude>**/application*.properties</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.sftl</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*.sftl</include>
+                </includes>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
+                <!--kotlin-->
+                <plugin>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-plugin</artifactId>
+                    <version>${kotlin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>compile</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!--docker-->
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.4.11</version>
+                    <configuration>
+                        <imageName>${docker.registry}/${project.artifactId}</imageName>
+                        <!--<dockerDirectory>src/main/docker</dockerDirectory>-->
+                        <baseImage>java:8</baseImage>
+                        <!-- <env>
+                             <JAVA_OPTS>""</JAVA_OPTS>
+                         </env>-->
+                        <entryPoint>java -Djava.security.egd=file:/dev/./urandom -jar /${project.build.finalName}.jar</entryPoint>
+                        <resources>
+                            <resource>
+                                <!--<targetPath>/</targetPath>-->
+                                <directory>${project.build.directory}</directory>
+                                <include>${project.build.finalName}.jar</include>
+                            </resource>
+                        </resources>
+                        <imageTags>
+                            <imageTag>${project.version}</imageTag>
+                            <imageTag>latest</imageTag>
+                        </imageTags>
+                    </configuration>
+                </plugin>
+
                 <!-- proguard插件,混淆压缩 -->
                 <plugin>
                     <groupId>com.github.wvengen</groupId>
