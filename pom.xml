@@ -6,14 +6,14 @@
 
     <groupId>com.slyak</groupId>
     <artifactId>slyak-parent</artifactId>
-    <version>1.3.1.RELEASE</version>
+    <version>1.3.2.RELEASE</version>
     <packaging>pom</packaging>
 
     <!--http://platform.spring.io/platform/-->
     <parent>
         <groupId>io.spring.platform</groupId>
         <artifactId>platform-bom</artifactId>
-        <version>Brussels-SR5</version>
+        <version>Brussels-SR7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -43,7 +43,7 @@
         <swagger-springmvc.version>1.0.2</swagger-springmvc.version>
         <swagger-ui.version>2.2.5</swagger-ui.version>
         <mysql-connector-java.version>5.1.39</mysql-connector-java.version>
-        <kotlin.version>1.0.6</kotlin.version>
+        <kotlin.version>1.2.0</kotlin.version>
 
         <!--default docker registry-->
         <docker.registry>docker.slyak.com</docker.registry>
