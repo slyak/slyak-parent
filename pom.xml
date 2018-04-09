@@ -24,6 +24,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.complier.version>1.8</java.complier.version>
+        <fastjson.version>1.2.47</fastjson.version>
         <guava.version>24.1-jre</guava.version>
         <jxls.version>1.0.6</jxls.version>
         <jxl.version>2.6.12</jxl.version>
